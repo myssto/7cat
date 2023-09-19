@@ -1,0 +1,39 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "start:prod": "cross-env NODE_ENV=production node .",
+    "start:dev": "cross-env NODE_ENV=development npx ts-node ./src/index.ts",
+    "start:dev:nodemon": "cross-env NODE_ENV=development nodemon --config nodemon.json src/index.ts",
+    "build": "npx tsc",
+    "deploy:prod": "cross-env NODE_ENV=production node dist/deploy-commands.js",
+    "deploy:dev": "cross-env NODE_ENV=development npx ts-node src/deploy-commands.ts",
+    "clear-commands:prod": "cross-env NODE_ENV=production node ./dist/clear-commands.js",
+    "clear-commands:dev": "cross-env NODE_ENV=development npx ts-node src/clear-commands.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.44.0",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "chrono-node": "^2.6.4",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1"
+  }
+}
